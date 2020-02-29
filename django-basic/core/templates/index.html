@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django Basic - Index</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h1>Index</h1>
+    <h2>{{ course }}</h2>
+    <p>{{ other }}</p>
+
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+        </tr>
+        {% for product in products %}
+            <tr>
+                <td><a href="{% url 'product' product.id %}">{{ product.name }}</a></td>
+                <td>{{ product.price }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
