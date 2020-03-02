@@ -1,11 +1,15 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Django Basic - Index</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
+    <center>
     <h1>Index</h1>
+    <img src="{% static 'images/django.png' %}">
     <h2>{{ course }}</h2>
     <p>{{ other }}</p>
 
@@ -21,5 +25,10 @@
             </tr>
         {% endfor %}
     </table>
+
+    <button onclick="test();">Clique-me</button>
+    </center>
+
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
