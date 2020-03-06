@@ -1,6 +1,8 @@
 from django import forms
 from django.core.mail.message import EmailMessage
 
+from .models import Product
+
 
 class ContactForm(forms.Form):
     name = forms.CharField(label='Nome', max_length=100)
@@ -23,3 +25,10 @@ class ContactForm(forms.Form):
             headers={'Reply-To': email}
         )
         mail.send()
+
+
+class ProductModelForm(forms.ModelForm):
+
+    class Meta:
+        model = Product
+        fields = ['name', 'price', 'stock', 'image']
